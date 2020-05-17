@@ -1,0 +1,63 @@
+<!doctype>
+<html>
+<head>
+    <title>
+    WELCOME TO LOGIN PAGE
+    
+    
+    </title>
+    
+    <link rel="stylesheet" href="reg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+    function display(value1){
+        document.getElementById("disha").innerHtml="you got" +value1;
+    }
+    
+    
+    
+    </script>
+
+    </head>
+    <style>
+        .checked{
+            color:gold;
+        }
+    
+    </style>
+    <body>
+        
+    <form class="form" method="post" action="/reviews">
+        <div class="form">
+        
+        
+            <label for="user" ><b>TITLE:</b></label>
+        <input type="text" id="user" placeholder="Enter your review" name="title" >
+            <br><br>
+            <label for="pass"><b>MOVIETITLE:</b></label>
+            <input type="text" id="pass" placeholder="Enter movietitle" name="movietitle"required><br><br>
+    
+       
+       <p>
+            <label for="description-text">Description</label><br>
+           <textarea id="description-text" name="description" rows="20" cols="100"> </textarea>
+            
+
+
+            </p>
+             <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+            <p>How many stars between 1 to 5 would you give to this movie</p>
+            <input type="number" min="1" max="5" name=stars placeholder=0>
+            <input type="submit" id="button1" value="SAVE REVIEW"><br>
+        </div>
+        
+         </form>
+        
+    </body>
+
+
+</html>
