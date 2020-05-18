@@ -1,0 +1,57 @@
+<!doctype>
+<html>
+<head>
+    <title>
+    WELCOME TO LOGIN PAGE
+    
+    
+    </title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    </head>
+    <style>
+        .checked{
+            color:gold;
+        }
+    
+    </style>
+    <body>
+        <h1>this is edit form</h1>
+    <form class="form" method="post" action="/reviews/{{review._id}}?_method=put">
+        <div class="form">
+         <label for="pass1"><b>password:</b></label>
+            <input type="password" id="pass1" placeholder="Enter movietitle" name="password"required><br><br>
+        
+            <label for="user" ><b>TITLE:</b></label>
+        <input type="text" id="user" placeholder="Enter your review" name="title" value="{{review.title}}">
+            <br><br>
+            <label for="pass"><b>MOVIETITLE:</b></label>
+            <input type="text" id="pass" placeholder="Enter movietitle" name="movietitle"required value="{{review.movietitle}}"><br><br>
+    
+       
+       <p>
+            <label for="description-text">Description</label><br>
+           <textarea id="description-text" name="description" rows="20" cols="100" >{{review.description}} </textarea>
+            
+
+
+            </p>
+             <span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+            <p>How many stars between 1 to 5 would you give to this movie</p>
+            <input type="number" min="1" max="5" name=stars placeholder=0>
+            <input type="submit" id="button1" value="SAVE REVIEW"><br>
+            <button><a href="/">CANCEL</a></button>
+        </div>
+        
+         </form>
+        
+    </body>
+
+
+</html>
