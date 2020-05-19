@@ -1,12 +1,41 @@
-<h1>this is all Reviews</h1>
+<!doctype html>
+<head>
+<style>
+    body{
+        background-color:lightblue;
+    }
+    .card{
+            height:750px;
+           display:block;
+           margin:auto;
+            background-color:white;
+        }
+    
+    a{
+           color:maroon;
+       }
+    
+    </style>
 
+
+</head>
+<body>
+<center><h1> Reviews</h1></center>
+<div class="row">
+    <div class="offset-3 col-sm-6 ">
+         <div class="card">
+  <div class="card-body">
 {{#each reviews}}
 
-<h2>{{this.title}}</h2>
-<h1>{{this.movietitle}}</h1>
-<h1>{{this.description}}</h1>
-<h1>{{this.stars}}</h1>
-<p><a href="/reviews/{{this._id}}">{{this.movietitle}}</a></p>
+        <div><p>Movie Title:<b><i>{{this.movietitle}}</i></b></p>
+        movie review:<b><i>{{this.title}}</i></b>
+<p>description:<i>{{this.description}}</i></p>
+<h6>stars:{{this.stars}}</h6>
+<p><a href="/reviews/{{this._id}}">Click here for changes</a></p><br><br>
 {{/each}}
-
-<a href="/reviews/new">New Review</a>
+    </div>
+             </div>
+        </div>
+</div>
+</div>
+</body>

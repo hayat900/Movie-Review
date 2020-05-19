@@ -9,32 +9,51 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+   
     </head>
     <style>
         .checked{
             color:gold;
         }
+
+    body{
+        background-color:lightblue;
+    }
+        .card{
+            height:750px;
+           display:block;
+           margin:auto;
+            background-color:lavender;
+        }
+        .btn btn-success{
+            text-decoration:none;
+        }
     
     </style>
+
+   
     <body>
-        <h1>this is new review> </h1>
+        <div class="container-fluid">
+
+     <div class="row">
+     <div class=" offset-3 col-sm-6">
+        <h1>This is the Create Review Form</h1>
+                    <div class="card">
+  <div class="card-body">
     <form class="form" method="post" action="/reviews">
         <div class="form">
-        
-        <label for="pass1"><b>password:</b></label>
-            <input type="password" id="pass1" placeholder="Enter movietitle" name="password"required><br><br>
-            <label for="user" ><b>TITLE:</b></label>
-        <input type="text" id="user" placeholder="Enter your review" name="title" >
+         <label for="pass1"><b>PASSWORD:</b></label><br> <input type="password" id="pass1" placeholder="Enter password" name="password"required><br><br>
+            <label for="movietitle"><b>MOVIETITLE:</b></label><br>
+            <input type="text" id="movietitle" placeholder="Enter movietitle" name="movietitle"required ><br><br>
+            <label for="title"><b>TITLE:</b></label><br>
+        <input type="text" id="title" placeholder="Enter your review" name="title">
             <br><br>
-            <label for="pass"><b>MOVIETITLE:</b></label>
-            <input type="text" id="pass" placeholder="Enter movietitle" name="movietitle"required><br><br>
+            
     
        
        <p>
-            <label for="description-text">Description</label><br>
-           <textarea id="description-text" name="description" rows="20" cols="100"> </textarea>
+           <label for="description-text"><b>Description</b></label><br>
+           <textarea id="description-text" name="description" rows="10" cols="50" > </textarea>
             
 
 
@@ -45,11 +64,18 @@
 <span class="fa fa-star"></span>
 <span class="fa fa-star"></span>
             <p>How many stars between 1 to 5 would you give to this movie</p>
-            <input type="number" min="1" max="5" name=stars placeholder=0>
-            <input type="submit" id="button1" value="SAVE REVIEW"><br>
+            <input type="number" min="1" max="5" name=stars placeholder=" 0">
+            <input type="submit"  class="btn btn-success" id="button1" value="SAVE REVIEW">
+            <a href="/" class="btn btn-success">CANCEL</a>
         </div>
         
          </form>
+      </div>
+                </div>
+            </div>
+            </div>
+        
+        </div>
         
     </body>
 

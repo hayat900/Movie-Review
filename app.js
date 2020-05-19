@@ -6,8 +6,9 @@ var b=require('body-parser');
 app.use(b.urlencoded({extended:true}));
 var mo=require('method-override');
 app.use(mo('_method'));
+bcrypt=require('bcrypt');
 const Moviereview=m.model("Moviereview",{
-    title:String,movietitle:String,description:String,stars:Number,password:String});
+    title:String,movietitle:String,description:String,stars:Number,password:String,dis:String});
                         
  
         app.listen(3000,function(request,response){
@@ -16,12 +17,13 @@ const Moviereview=m.model("Moviereview",{
 var exhs=require('express-handlebars');
 app.set('view engine','handlebars');
 app.engine('handlebars',exhs({defaultLayout:'main'}));
-
+module.exports=app;
 app.get('/',function(request,response){
+    
    Moviereview.find().lean().then(reviews=>{
                     response.render("reviews-index.handlebars",{reviews:reviews});
    }).catch(err=>{
-       console.log(err);
+       console.log("err");
    });
 });
                    
@@ -87,15 +89,49 @@ app.get('/reviews/:id/delete',function(request,response){
     });
 
 });
- app.delete('/reviews/:id',function(request,response){
-   
-             Moviereview.findByIdAndRemove(request.params.id).then(review=>{
+ /*app.delete('/reviews/:id',function(request,response){
+   Moviereview.findBypassword({
+       password:request.body.password},function(err,reviews){
+       if(err){
+           console.log("error");
+       }
+       else{
+          
+        console.log("successful");
+  console.log(request.body.password);
+             Moviereview.findByIdAndDelete(request.params.id).then(review=>{
+                
                  response.redirect('/');
-             }).catch(err=>{
-                     console.log(err.message);
-                 });
-         
-     });
+             });
+       }
+       console.log("great");
+   });
+ });*/
+app.delete('/reviews/:id',function(request,response){
+    var d=request.body.password;
+    Moviereview.findOne({
+       password:d},function(err,reviews){
+       if(err){
+           console.log(d);
+           response.send("invalid");
+       }
+       else{
+            console.log(request.body.password);
+           console.log("successful");
+          
+           Moviereview.findByIdAndDelete(request.params.id).then(review=>{
+                
+                 response.redirect('/');
+             });
+       }
+    });
+});
+        
+          
+                     
+       
+       
+        
 
              
     

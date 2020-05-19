@@ -1,8 +1,54 @@
-<h1>this is particular review</h1>
-<h1>{{review.title}}</h1>
-<h2>{{review.movietitle}}</h2>
-<p>{{review.description}}</p>
+<!doctype>
+<html>
+<head>
+    <title>
+    WELCOME TO LOGIN PAGE
+    
+    
+    </title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+       .container-fluid{
+       
+    background-color: lightblue;
+   
+           
+       }
+       body{
+           background-color:lightblue;
+       }
+       .card{
+           display:block;
+           margin:auto;
+       }
+       a{
+           color:maroon;
+       }
+    </style>
+    </head>
+    <body>
+    <div class="container-fluid"><br><br><br>
+          
+     <div class="row">
+     <div class="offset-3 col-sm-6">
+          <div class="card">
+  <div class="card-body">
+         <h1>You are reviewing Movie {{review.movietitle}}</h1>
+
+
+<div>movie review:<b><i>{{review.title}}</i></b>
+    <p>description:<b><i>{{review.description}}</i></b></p>
+<h6>stars:{{review.stars}}</h6>
 <p><a href="/reviews/{{review._id}}/edit">Edit</a></p>
 <p><a href="/reviews/{{review._id}}/delete">DELETE</a></p>
 
-<p><a href="/">Back to home</a></p>
+
+         </div>
+      </div>
+               </div>
+        </div>
+        </div>
+    </body>
+</html>
